@@ -80,12 +80,11 @@
 
     /* Estilo para la sección de resultados del clima */
     section {
-        padding: 16px;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 2px;
     }
 
     h1 {
@@ -105,6 +104,9 @@
     @media (max-width: 768px) {
         .container {
             min-height: 40vh;
+        }
+        h2 {
+            margin-bottom: 2px;
         }
     }
 </style>
