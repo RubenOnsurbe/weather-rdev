@@ -21,13 +21,11 @@
     {:then weather}
         <section>
             <h1>{weather.locationName}</h1>
-            <div class="temperature">
-                <h2>{weather.temperature}º</h2>
-                <WeatherIcon
-                    text={weather.conditionText}
-                    icon={weather.conditionIcon}
-                />
-            </div>
+            <h2>{weather.temperature}º</h2>
+            <WeatherIcon
+                text={weather.conditionText}
+                icon={weather.conditionIcon}
+            />
         </section>
         <WeatherFooter
             humidity={weather.humidity}
@@ -103,12 +101,5 @@
         font-size: 100px;
         color: #333;
         margin-bottom: 10px;
-    }
-
-    .temperature {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
     }
 </style>
