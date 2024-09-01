@@ -2,7 +2,9 @@
     import { getWeatherFrom } from "../services/weather.js";
     import WeatherIcon from "../components/weather-icon.svelte";
     import WeatherFooter from "../components/weather-footer.svelte";
-    let city = "Alicante";
+    let city = "Santa Pola";
+    let region = "Comunidad Valenciana";
+    let country = "Spain";
     let weatherPromise = getWeatherFrom(city); // Esta es una promesa
 
     function updateCity() {
@@ -12,7 +14,20 @@
 
 <div class="container">
     <form on:submit|preventDefault={updateCity}>
+        <p>Ciudad:</p>
         <input type="text" bind:value={city} placeholder="Enter city name" />
+        <p>Comunidad Autonoma:</p>
+        <input
+            type="text"
+            bind:value={region}
+            placeholder="Enter region name"
+        />
+        <p>Pais:</p>
+        <input
+            type="text"
+            bind:value={country}
+            placeholder="Enter country name"
+        />
         <button type="submit">Get Weather</button>
     </form>
 
@@ -21,6 +36,8 @@
     {:then weather}
         <section>
             <h1>{weather.locationName}</h1>
+            <h3>{weather.country}</h3>
+            <h3>{weather.localtime}</h3>
             <h2>{weather.temperature}º</h2>
             <WeatherIcon
                 text={weather.conditionText}
@@ -50,7 +67,6 @@
 
     /* Formulario de ciudad */
     form {
-        margin-bottom: 20px;
     }
 
     input[type="text"] {
