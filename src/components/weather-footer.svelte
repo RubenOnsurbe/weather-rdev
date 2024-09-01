@@ -38,8 +38,6 @@
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
-        bottom: -120px;
-        position: relative;
     }
 
     span {
@@ -53,7 +51,16 @@
         font-weight: 8 00;
     }
 
-    footer div {
-        margin: 0 20px;
+    @media (max-width: 768px) {
+        footer {
+            flex-direction: column;
+            gap: 12px;
+        }
+        span {
+            font-size: 12px;
+        }
+        strong {
+            font-size: 15px;
+        }
     }
 </style>
