@@ -102,4 +102,9 @@
         color: #333;
         margin-bottom: 10px;
     }
+    @media (max-width: 768px) {
+        .container {
+            min-height: 40vh;
+        }
+    }
 </style>
